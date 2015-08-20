@@ -1,13 +1,12 @@
-require('rspec')
-require('to_do')
+require('spec_helper')
 
 describe(Task) do
 
-
-  describe('#description') do
-    it("gives description") do
-      test_task=Task.new("wash the dog")
-      expect(test_task.description()).to(eq("wash the dog"))
+  describe("#==") do
+    it("is the same task if it has the same description") do
+      task1 = Task.new({:description => "learn SQL"})
+      task2 = Task.new({:description => "learn SQL"})
+      expect(task1).to(eq(task2))
     end
   end
 
@@ -19,7 +18,7 @@ describe(Task) do
 
   describe("#save") do
     it("adds a task to the array of saved tasks") do
-      test_task = Task.new("clean the porch")
+      test_task = Task.new({:description => "learn SQL"})
       test_task.save()
       expect(Task.all()).to(eq([test_task]))
     end
