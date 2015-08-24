@@ -1,6 +1,6 @@
 <h5>Tasks:</h5>
 
-<% @tasks.each() do |task| %>
+<% @tasks.not_done().each() do |task| %>
 <li><%= task.description() %> <a href="/tasks/<%= task.id() %>/edit">Edit Task Description</a></li>
 <% end %>
 
