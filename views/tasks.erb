@@ -1,0 +1,15 @@
+<h5>Tasks:</h5>
+
+<% @tasks.each() do |task| %>
+<li><%= task.description() %></li>
+<% end %>
+
+<h3>Add a task </h3>
+
+<form action="/tasks/add" method="post">
+
+  <label for="description">Description of the task:</label>
+  <input id="description" name="description" type="text">
+
+  <button type="submit">Add task</button>
+</form>

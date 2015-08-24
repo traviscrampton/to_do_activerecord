@@ -60,3 +60,16 @@ delete("/lists/:id") do
   @lists = List.all()
   erb(:index)
 end
+
+get('/tasks') do
+  @tasks = Task.all()
+  erb(:tasks)
+end
+
+post('/tasks/add') do
+  description = params.fetch("description")
+  @task = Task.new({:description => description, :list_id => nil})
+  @task.save()
+  @tasks = Task.all()
+  erb(:tasks)
+end
