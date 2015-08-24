@@ -5,6 +5,7 @@ class Task < ActiveRecord:: Base
   belongs_to(:list)
 end
 
+
 # class Task
 #
 #   attr_reader(:description, :list_id)
